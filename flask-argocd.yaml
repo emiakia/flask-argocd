@@ -23,8 +23,8 @@ spec:
   project: flask-app-project
   source:
     repoURL: 'https://github.com/emiakia/flask-argocd.git'
-    targetRevision: main
-    path: '.'  
+    targetRevision: main  # Ensure this is the correct branch
+    path: 'k8s' 
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
@@ -32,3 +32,4 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
