@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-flask
+  name: flask-argocd
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-flask
+      app: flask-argocd
   template:
     metadata:
       labels:
-        app: hello-flask
+        app: flask-argocd
     spec:
       containers:
-      - name: hello-flask
+      - name: flask-argocd
         image: ghcr.io/emiakia/flask-argocd:v01
         ports:
         - containerPort: 5000
