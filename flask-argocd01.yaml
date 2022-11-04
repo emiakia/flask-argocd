@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: flask-app-project
+  namespace: argocd
+spec:
+  description: Flask Application Project
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: '*'
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flask-argocd
+  namespace: argocd
+spec:
+  project: flask-app-project
+  source:
+    repoURL: 'https://github.com/emiakia/flask-argocd.git'
+    targetRevision: main  # Ensure this is the correct branch
+    path: 'k8s' 
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
