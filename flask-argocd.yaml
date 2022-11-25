@@ -20,11 +20,11 @@ metadata:
   name: flask-argocd
   namespace: argocd
 spec:
-  project: default  # or flask-app-project if you created a project
+  project: flask-app-project
   source:
     repoURL: 'https://github.com/emiakia/flask-argocd.git'
-    targetRevision: master
-    path: '.'  # Path where your k8s manifests (deployment, service) are located
+    targetRevision: main
+    path: '.'  
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
