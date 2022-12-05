@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-argocd
+  labels:
+    app: flask-argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-argocd
+  template:
+    metadata:
+      labels:
+        app: flask-argocd
+    spec:
+      containers:
+      - name: flask-argocd
+        image: ghcr.io/emiakia/flask-argocd:v01  
+        ports:
+        - containerPort: 80  
+      imagePullSecrets:
+      - name: ghcr-secret
+
