@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: flask-argocd
-        image: ghcr.io/emiakia/flask-argocd:v1
+        image: ghcr.io/emiakia/flask-argocd:v01
         ports:
         - containerPort: 5000
