@@ -23,4 +23,6 @@ jobs:
       run: |
         docker build -t ghcr.io/${{ github.repository_owner }}/flask-argocd:${{ github.sha }} .
         docker push ghcr.io/${{ github.repository_owner }}/flask-argocd:${{ github.sha }}
+    - name: Log in to GitHub Container Registry
+      run: echo "${{ secrets.GTH_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
 
