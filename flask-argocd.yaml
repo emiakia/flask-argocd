@@ -17,7 +17,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: flask-app
+  name: flask-argocd
   namespace: argocd
 spec:
   project: default  # or flask-app-project if you created a project

@@ -21,6 +21,6 @@ jobs:
 
     - name: Build and Push Docker image
       run: |
-        docker build -t ghcr.io/${{ github.repository_owner }}/flask-app:${{ github.sha }} .
-        docker push ghcr.io/${{ github.repository_owner }}/flask-app:${{ github.sha }}
+        docker build -t ghcr.io/${{ github.repository_owner }}/flask-argocd:${{ github.sha }} .
+        docker push ghcr.io/${{ github.repository_owner }}/flask-argocd:${{ github.sha }}
 
