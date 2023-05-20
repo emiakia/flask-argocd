@@ -27,6 +27,6 @@ jobs:
       run: |
         docker push ghcr.io/${{ github.repository_owner }}/flask-app:${{ github.sha }}
 
-    - name: Update Kubernetes Deployment
-      run: |
-        kubectl set image deployment/flask-app flask-app=ghcr.io/${{ github.repository_owner }}/flask-app:${{ github.sha }} --namespace argocd
+    # - name: Update Kubernetes Deployment
+    #   run: |
+    #     kubectl set image deployment/flask-app flask-app=ghcr.io/${{ github.repository_owner }}/flask-app:${{ github.sha }} --namespace argocd
