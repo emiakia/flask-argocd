@@ -12,8 +12,6 @@ spec:
       labels:
         app: flask-app
     spec:
-      imagePullSecrets:
-      - name: ghcr-secret
       containers:
       - name: flask-app
         image: ghcr.io/emrankia/flask-app:v1
