@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: ghcr.io/emrankia/flask-app:v1
+        image: ghcr.io/emiakia/flask-app:v1
         ports:
         - containerPort: 5000
