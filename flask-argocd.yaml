@@ -22,8 +22,8 @@ metadata:
 spec:
   project: default  # or flask-app-project if you created a project
   source:
-    repoURL: 'https://github.com/yourusername/your-repo'
-    targetRevision: HEAD
+    repoURL: 'https://github.com/emiakia/flask-argocd.git'
+    targetRevision: main
     path: '.'  # Path where your k8s manifests (deployment, service) are located
   destination:
     server: 'https://kubernetes.default.svc'
