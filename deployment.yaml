@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: yourusername/flask-app:v1
+        image: emiakia/flask-app:v1
         ports:
         - containerPort: 5000
