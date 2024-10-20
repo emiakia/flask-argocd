@@ -2,10 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-argocd
-  labels:
-    app: flask-argocd
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: flask-argocd
@@ -16,22 +14,8 @@ spec:
     spec:
       containers:
       - name: flask-argocd
-        image: ghcr.io/emiakia/flask-argocd:v01  
+        image: ghcr.io/emiakia/flask-argocd:v01
         ports:
-        - containerPort: 80  
+        - containerPort: 5000
       imagePullSecrets:
       - name: ghcr-secret
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: flask-argocd
-spec:
-  type: NodePort  # Change to LoadBalancer or ClusterIP as needed
-  ports:
-  - port: 80
-    targetPort: 80
-    nodePort: 30080  # Change if you want to use a different port
-  selector:
-    app: flask-argocd
-
