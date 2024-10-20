@@ -56,7 +56,7 @@ Once the secret is created, apply the flask-argocd.yaml manifest file to deploy 
 To apply the manifest:
 ```bash
 kubectl apply -f flask-argocd.yaml
-
+```
 Argo CD will monitor the repository and ensure that the application is deployed and kept in sync with the state defined in the flask-argocd.yaml file.
 
 ### 4. Access the Application
