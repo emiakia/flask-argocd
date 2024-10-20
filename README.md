@@ -46,7 +46,7 @@ kubectl create secret docker-registry ghcr-secret \
   --docker-username=emiakia \
   --docker-password=${{ secrets.GHT_TOKEN }} \
   --docker-email=emran.kia@gmail.com
-bash
+```
 
 This command creates a Kubernetes secret called ghcr-secret with the necessary authentication details to pull the private image from GitHub Container Registry.
 
